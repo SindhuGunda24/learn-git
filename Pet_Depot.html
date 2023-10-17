@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Vue.js Pet Depot</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <h1 v-text = "sitename"></h1>
+            </header>
+            <main>
+                <figure>
+                    <img v-bind:src = "product.image" height="100px" width="100px">
+                </figure>
+                <h2 v-text="product.title"></h2>
+                <p v-html="product.description"></p>
+                <p>Price: {{product.price}} </p>
+            </main>
+        </div>
+        <script type="text/javascript">
+            // new Vue is the constructor
+            // ({ option object goes here })
+            // option objects are all the pre defined keys like el, data and methods and it is written as JSON
+            let webstore = new Vue ({
+                // specifies the Document Object Model (DOM)
+                el: "#app",
+                data: {
+                    sitename: "Vue.js Pet Depot",
+                    product: {
+                        id: 1001, 
+                        title: "Cat Food, 25 lb bag", 
+                        description: "A 25 pounds bag of <em>irresistible</em>," + " organic goodness for your cat,",
+                        price: 2000, 
+                        image: "cat-food-aluminum-can-with-yellow-label_1308-8258.jpeg"
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
